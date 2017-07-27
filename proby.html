@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+    <title>Фото походов</title>
+<link href ="image/fabicon.ico" rel="shortcut icon" type="image/x-ison"/>
+//<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function (event) {
+
+    var first_img = $('#imageContainer li:first img')
+    var imageContainer = $("#imageContainer");
+    $("#main-img").attr("src", $(first_img).attr("src"));
+    $("html").css("background-image", "url(" + $(first_img).attr("src") + ")");
+ 
+    $("#imageBox img").click(function () {
+        $("#main-img").attr("src", $(this).attr("src"));
+        $("html").css("background-image", "url(" + $(this).attr("src") + ")");
+        $("#main-img").fadeOut(0);
+        $("#main-img").fadeIn(1000);     
+    });
+ 
+    imageContainer.find('ul').on('mousewheel', function (e, delta) {
+        this.scrollLeft -= (delta * 50);
+        e.preventDefault();
+    });
+})
+
+
+</script>
+<style>
+
+html
+{   
+    min-height: 100%;
+    background-size: cover;
+    box-shadow: inset 0 0 0 100em rgba(220,220,220,0.8);
+}
+ 
+.contents
+{
+    width: 700px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+#main-img
+{
+    background-color: #F2F2F2;
+    padding: 10px;
+    height: 300px;
+    box-shadow: 0px 25px 19px -18px #545454;   
+}
+
+#imageContainer
+{
+    width: 650px;
+    margin: 30px auto 10px auto;
+    position: relative;
+}
+ 
+#imageContainer:before
+{
+    content: '';
+    width: 30px;
+    box-shadow: 20px 0 20px -10px #000000;
+    position: absolute;
+    top: -10px;
+    left: -30px;
+    bottom: -10px;
+    z-index: 2;
+}
+ 
+#imageContainer:after
+{
+    content: '';
+    width: 30px;
+    box-shadow: -20px 0 20px -10px #000000;
+    position: absolute;
+    top: -10px;
+    right: -30px;
+    bottom: -10px;
+    z-index: 2;
+}
+
+#imageBox
+{
+    padding: 10px;
+    background-color: rgba(0,0,0,0.2);
+    list-style: none;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+ 
+#imageBox li
+{
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+#imageBox img
+{
+    width: 100px;
+    height:100px;
+    cursor: pointer;
+    border: 4px solid #FFFFFF;
+}
+#imageContainer ::-webkit-scrollbar
+{
+    height: 8px;
+    background-color: rgba(100,0,0,0.3);
+    border-radius: 5px;
+}
+#imageContainer ::-webkit-scrollbar-thumb
+{
+    background: #fff;
+}
+#imageContainer ::-webkit-scrollbar-thumb:window-inactive
+{
+    background: #aaa;
+}
+
+</style>
+
+</head>
+<body>
+    <div id="TYR">
+    <div class="contents">
+        <h1 style="color:darkblue">
+            Фото наших походов! Присоединяйтесь!
+        </h1>
+        <img id="main-img" src="#" />
+        <div id="imageContainer">
+            <ul id="imageBox">
+                <li>
+                    <img src="image/tyr1.jpg"  /></li>
+                <li>
+                    <img src="image/tyr2.jpg"  /></li>
+                <li>
+                    <img src="image/tyr3.jpg"  /></li>
+                <li>
+                    <img src="image/tyr4.jpg"  /></li>
+                <li>
+                    <img src="image/tyr5.jpg"  /></li>
+                <li>
+                    <img src="image/tyr6.jpg"  /></li>
+                <li>
+                    <img src="image/tyr7.jpg"  /></li>
+                <li>
+                    <img src="image/tyr8.jpg"  /></li>
+                <li>
+                    <img src="image/tyr9.jpg"  /></li>
+            </ul>
+        </div>
+
+        
+    </div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name = "keywords" content="хобби, досуг, отдых, развлечение" />
+<meta name = "description" content="первый сайт" />
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+  <link rel="stylesheet" href="/resources/demos/style.css">
+<link href="css/style.css" rel = "stylesheet" type="text/css" />
+<link href ="image/fabicon.ico" rel="shortcut icon" type="image/x-ison"/>
+<title>Найди свое хобби</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+<script src="Script/fun.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <script>
+
+  $( function() {
+
+    $( "#sortable" ).sortable();
+
+    $( "#sortable" ).disableSelection();
+
+  } );
+
+  </script>
+
+    </head>
+    <body>
+       
+        <div id="page-warp">
+        <header>
+            <a href="site2.html" title= "На главную" id="logo" > Хобби </a><span class="contact"> <a href="about.html" title="Информация о нас">о нас</a> </span><input type = "search" class="field" placeholder="Давай помогу найти!"/><span class="right"><span class="contact"> <a href="reg.html" title="Зарегестрироваться">Регистрация</a> </span><span class="right"><span class="contact"> <a href="auth.html" title="Войти">Вход</a> </span></span>
+        </header>
+  <div class="clear"><br/> </div>
+             <a name="VERX"></a>
+    <center>
+        <div id="menu">Разделы <hr /></div>
+         <div id="menuHrefs">
+            <a href="site2.html#tyr">Туризм</a>
+             <a href="site2.html#Ryk">Рукоделие</a>
+             <a href="site2.html#Kyl">Кулинария</a>
+             <a href="site2.html#Iss">Искусство</a>
+             <a href="site2.html#Spo">Спорт</a>
+        </div>
+    </center>
+  <style>
+    
+ 
+  </style>
+</head>
+
+<body>
+
+<div>
+  <form>
+      <center>
+      <h2>Регистрация</h2>
+    </center>
+    <table>
+      <tr>
+        <td>Имя</td>
+        <td>
+          <input name="from" type="text">
+        </td>
+      </tr>
+        <tr>
+        <td>Фамилия</td>
+        <td>
+          <input name="from1" type="text">
+        </td>
+      </tr>
+        <tr>
+        <td>Эл. почта</td>
+        <td>
+          <input name="from2" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>Ваш пароль</td>
+        <td>
+          <input name="password" type="password">
+        </td>
+      </tr>
+      <tr>
+        <td>Повторите пароль</td>
+        <td>
+          <input name="password2" type="password">
+        </td>
+      </tr>
+    </table>
+
+      <p>Выстройте Ваши интересы в порядке убывания:</p> 
+      <ul id="sortable">
+
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Туризм</li>
+
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Рукоделие</li>
+
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Кулинария</li>
+
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Искусство</li>
+
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Спорт</li>
+
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Новые знакомства</li>
+
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Попробовать что-то новое</li>
+
+</ul>
+      <p>О себе:</p>
+    <label>
+      <textarea name="message" style="display:block;width:400px;height:80px"></textarea>
+    </label>
+
+    <input type="button" onclick="validate(this.form)" style="color:darkblue; width:400px; margin-top:10px;" value="Зарегистрироваться">
+  </form>
+
+  <script>
+    function showError(container, errorMessage) {
+      container.className = 'error';
+      var msgElem = document.createElement('span');
+      msgElem.className = "error-message";
+      msgElem.innerHTML = errorMessage;
+      container.appendChild(msgElem);
+    }
+
+    function resetError(container) {
+      container.className = '';
+      if (container.lastChild.className == "error-message") {
+        container.removeChild(container.lastChild);
+      }
+    }
+
+    function validate(form) {
+      var elems = form.elements;
+
+      resetError(elems.from.parentNode);
+      if (!elems.from.value) {
+        showError(elems.from.parentNode, ' Укажите Имя.');
+      } 
+        resetError(elems.from1.parentNode);
+      if (!elems.from1.value) {
+        showError(elems.from1.parentNode, ' Укажите Фамилию.');
+      }
+        resetError(elems.from2.parentNode);
+      if (!elems.from2.value) {
+        showError(elems.from2.parentNode, ' Укажите Эл. почту.');
+      }
+      resetError(elems.password.parentNode);
+      if (!elems.password.value) {
+        showError(elems.password.parentNode, ' Укажите пароль.');
+      } else if (elems.password.value != elems.password2.value) {
+        showError(elems.password2.parentNode, ' Пароли не совпадают.');
+      }
+
+      resetError(elems.message.parentNode);
+      if (!elems.message.value) {
+        showError(elems.message.parentNode, ' Отсутствует текст.');
+      }
+
+    }
+  </script>
+
+ <div id="main_soc_block1">
+        <center>
+        <div id="main_soc_block1_in">
+            <h1>Добро пожаловать!</h1>
+            <p>После прохождения регистрации в течении суток Вам на почту придет письмо с информацией, а в течении двух суток с Вами свяжестя Ваш куратор, которому вы сможете задать все интересующий вопросы и расскажете свои пожелания и предпочтения! Если Вы здесь, значит Вы на верном пути! Желам Вам хорошего настроения! Ваши отзывы, пожелания, предложения ждем <a href="fitback.html">здесь.</a> </p>
+    </div>
+     </center>
+     </div>
+   </div>  
+     <footer>
+         <span class="left">Все права защищены &copy;  2016 </span><span class="right"><img src="image/VK.png" alt="Группа ВКонтакте" title = "Группа ВКонтакте"/> <img  src="image/TW.png" alt="Группа в Твитере" title = "Группа ВКонтакте" /></span>
+        </footer>  
+</body>
+ 
+</html>
+        <!--
+
+    [[[[[[[[[[[[[[[      ]]]]]]]]]]]]]]]
+    [::::::::::::::      ::::::::::::::]
+    [::::::::::::::      ::::::::::::::]
+    [::::::[[[[[[[:      :]]]]]]]::::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[     CODE THE WEB     ]:::::]
+    [:::::[  http://brackets.io  ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [:::::[                      ]:::::]
+    [::::::[[[[[[[:      :]]]]]]]::::::]
+    [::::::::::::::      ::::::::::::::]
+    [::::::::::::::      ::::::::::::::]
+    [[[[[[[[[[[[[[[      ]]]]]]]]]]]]]]]
+
+-->
